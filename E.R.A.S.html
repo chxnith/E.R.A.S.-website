@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>E.R.A.S- Elephant Railway Alert System</title>
+	<link rel="icon" type="png" href="logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- STATE CHECKBOXES (Hidden inputs that control the site state) -->
+    <input type="checkbox" id="theme-toggle" class="state-input">
+    <input type="checkbox" id="profile-toggle" class="state-input">
+
+    <!-- PAGE WRAPPER (Receives CSS variables based on checkboxes) -->
+    <div class="page-wrapper">
+        
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="glass-panel">
+                <div class="container">
+                    <div class="nav-content">
+                        <div class="flex items-center">
+                            <div class="logo-box">
+                                <img src="logo.png" alt="E.R.A.S Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
+                            <!-- Removed highlight span so text is uniformly styled -->
+                            <span class="logo-text">E.R.A.S</span>
+                        </div>
+                        
+                        <div class="nav-links">
+                            <a href="#features">Features</a>
+                            <a href="#live-feed">Live Feed</a>
+                            <a href="#developers">Developers</a>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <!-- Label triggering Theme Toggle -->
+                            <label for="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                                <i class="fa-solid fa-moon" style="display: var(--moon-display)"></i>
+                                <i class="fa-solid fa-sun" style="display: var(--sun-display); color: #fbbf24;"></i>
+                            </label>
+
+                            <!-- Label triggering Profile Modal -->
+                            <label for="profile-toggle" class="profile-btn">
+                                <div style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; background: #e2e8f0;">
+                                    <img src="profile.png" alt="User" />
+                                </div>
+                                <span style="font-weight: 500; font-size: 0.875rem;">My Profile</span>
+                            </label>
+                            
+                            <button class="btn btn-primary" style="padding: 0.6rem 1.25rem;">
+                                Get App
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="blob" style="background-color: var(--brand-100); width: 24rem; height: 24rem; top: 0; left: 0; transform: translate(-50%, -20%);"></div>
+            <div class="blob" style="background-color: #bfdbfe; width: 20rem; height: 20rem; bottom: 0; right: 0; transform: translate(30%, 30%);"></div>
+
+            <div class="container relative">
+                <div class="hero-grid">
+                    <div>
+                        <!-- "System Online" Badge REMOVED HERE -->
+                        
+                        <h1 class="hero-title">
+                            Coexistence through <span class="gradient-text">Technology.</span>
+                        </h1>
+                        <p class="hero-desc">
+                            Real-time tracking, intelligent alerts, and community-driven safety. E.R.A.S bridges the gap between wildlife conservation and human safety.
+                        </p>
+                        <div class="flex flex-col gap-4" style="flex-direction: row; flex-wrap: wrap;">
+                            <button class="btn btn-primary btn-store" style="background-color: var(--slate-900);">
+                                <i class="fa-brands fa-apple"></i>
+                                <div style="line-height: 1.2;">
+                                    <div class="store-text-sm">Download on the</div>
+                                    <div class="store-text-lg">App Store</div>
+                                </div>
+                            </button>
+                            <button class="btn btn-secondary btn-store">
+                                <i class="fa-brands fa-google-play" style="color: var(--brand-600);"></i>
+                                <div style="line-height: 1.2;">
+                                    <div class="store-text-sm">GET IT ON</div>
+                                    <div class="store-text-lg">Google Play</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CSS Only Phone Mockup with Horizontal Carousel -->
+                    <div class="phone-mockup">
+                        <div class="dynamic-island"></div>
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track">
+                                
+                                <!-- SLIDE 1: HOME MAP -->
+                                <div class="carousel-slide">
+                                    <div class="app-screen">
+                                        <!-- Status Bar -->
+                                        <img src="user-updates.png" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 4rem; left: 1rem; background: rgba(0,0,0,0.6); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">
+                                            
+                                        </div>
+                                        <div style="position: absolute; bottom: 2rem; left: 1rem; color: white;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 2: LIVE FEED -->
+                                <div class="carousel-slide">
+                                    <div class="app-screen">
+                                        <img src="home.png" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 4rem; left: 1rem; background: rgba(0,0,0,0.6); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">
+                                            
+                                        </div>
+                                        <div style="position: absolute; bottom: 2rem; left: 1rem; color: white;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 3: PROFILE -->
+                                <div class="carousel-slide">
+                                    <div class="app-screen">
+                                        <img src="profile-page.png" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 4rem; left: 1rem; background: rgba(0,0,0,0.6); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem;">
+                                            
+                                        </div>
+                                        <div style="position: absolute; bottom: 2rem; left: 1rem; color: white;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">Core Capabilities</span>
+                    <h3 class="section-title">Four pillars of modern protection.</h3>
+                    <p style="color: var(--text-muted); font-size: 1.125rem;">Our system integrates IoT sensors, community reporting, and AI vision to provide complete situational awareness.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="icon-box bg-red"><i class="fa-solid fa-bell"></i></div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.75rem; font-size: 1.25rem;">Instant Alerts</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Receive push notifications the moment an elephant enters a geofenced village zone.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="icon-box bg-blue"><i class="fa-solid fa-video"></i></div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.75rem; font-size: 1.25rem;">Live Vision</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Access real-time feeds from our solar-powered CCTV network installed in critical corridors.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="icon-box bg-green"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.75rem; font-size: 1.25rem;">Movement Logs</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Tap any camera on the map to see the "Last Seen" timestamp and direction of movement.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="icon-box bg-purple"><i class="fa-solid fa-camera"></i></div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.75rem; font-size: 1.25rem;">Community Watch</h4>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Spot an elephant? Upload a photo instantly to warn nearby users and update the tracking map.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Command Center -->
+        <section id="live-feed" class="live-section">
+            <div class="container">
+                <div class="flex flex-col gap-4" style="margin-bottom: 3rem; md:flex-row; justify-content: space-between; align-items: flex-end;">
+                    <div>
+                        <div class="flex items-center gap-2" style="color: red; font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.875rem;">
+                            <span class="animate-pulse" style="width: 8px; height: 8px; background: red; border-radius: 50%;"></span>
+                            Live Demo
+                        </div>
+                        <h3 style="font-size: 2.25rem; font-weight: 700;">The Command Center</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="btn" style="background: rgba(255,255,255,0.1); color: white; font-size: 0.875rem;">CAM 03</button>
+                        <button class="btn" style="background: var(--brand-600); color: white; font-size: 0.875rem;">CAM 04</button>
+                        <button class="btn" style="background: rgba(255,255,255,0.1); color: white; font-size: 0.875rem;">CAM 05</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="cctv-frame">
+                        <video class="cctv-img" autoplay muted loop playsinline controls>
+							<source src="elephant-footage.mp4" type="video/mp4">
+						</video>
+
+                        <div class="absolute" style="top: 1rem; left: 1rem; background: rgba(0,0,0,0.6); padding: 0.25rem 0.75rem; border-radius: 0.5rem; font-family: monospace; font-size: 0.75rem; color: white;">
+                            <span style="color: #ef4444; margin-right: 0.5rem;">● REC</span> CAM_04
+                        </div>
+                        <div class="cctv-overlay">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 style="font-weight: 700; font-size: 1.25rem; color: white;">Minneriya - East</h4>
+                                    <p style="color: #94a3b8; font-size: 0.875rem;">Last motion: Just now</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="updates-panel">
+                        <div class="flex justify-between items-center" style="margin-bottom: 1rem;">
+                            <h4 style="font-weight: 700; color: white;">Last Seen Logs</h4>
+                            <span style="font-size: 0.75rem; color: #94a3b8; background: rgba(255,255,255,0.1); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">Real-time</span>
+                        </div>
+                        
+                        <div style="flex: 1; overflow-y: auto;">
+                            <div class="log-item">
+                                <div style="width: 2.5rem; height: 2.5rem; background: #1e293b; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: var(--brand-500); flex-shrink: 0;">
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div class="flex justify-between">
+                                        <span style="font-weight: 600; font-size: 0.875rem; color: white;">Camera 04</span>
+                                        <span style="font-size: 0.75rem; color: white;">2m ago</span>
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem;">Movement detected heading West.</p>
+                                </div>
+                            </div>
+
+                            <div class="log-item">
+                                <div style="width: 2.5rem; height: 2.5rem; background: #1e293b; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #a855f7; flex-shrink: 0;">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div class="flex justify-between">
+                                        <span style="font-weight: 600; font-size: 0.875rem; color: white;">Report #892</span>
+                                        <span style="font-size: 0.75rem; color: white;">15m ago</span>
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem;">User visual confirmation.</p>
+                                </div>
+                            </div>
+
+                            <div class="log-item">
+                                <div style="width: 2.5rem; height: 2.5rem; background: #1e293b; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #64748b; flex-shrink: 0;">
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div class="flex justify-between">
+                                        <span style="font-weight: 600; font-size: 0.875rem; color: white;">Camera 02</span>
+                                        <span style="font-size: 0.75rem; color: white;">1h ago</span>
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem;">Clear. No activity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community -->
+        <section class="community-section">
+            <div class="container">
+                <div class="community-card">
+                    <div class="blob" style="background: white; opacity: 0.05; width: 20rem; height: 20rem; top: 0; left: 0;"></div>
+                    <div class="blob" style="background: var(--brand-500); opacity: 0.2; width: 30rem; height: 30rem; bottom: 0; right: 0;"></div>
+                    
+                    <div class="relative" style="z-index: 10; max-width: 40rem; margin: 0 auto;">
+                        
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">See something? Say something.</h2>
+                        <p style="color: var(--brand-100); font-size: 1.125rem; margin-bottom: 2.5rem;">
+                            Empower your community. Take a photo through the app to instantly alert neighbors and rangers. Every upload improves our AI tracking model.
+                        </p>
+                        <button class="btn" style="background: white; color: var(--brand-900); font-weight: 700; font-size: 1.125rem; padding: 1rem 2.5rem;">
+                            Join the Network
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developers -->
+        <!-- Developers -->
+<section id="developers" style="padding: 6rem 0; background-color: var(--bg-body);">
+    <div class="container">
+        <div class="flex flex-col items-center justify-between gap-4" style="margin-bottom: 4rem; md:flex-row;">
+            <div>
+                <h2 class="section-title" style="margin-bottom: 0.5rem;">Built by Experts</h2>
+                <p style="color: var(--text-muted);">The team behind the technology.</p>
+            </div>
+        </div>
+
+        <div class="dev-grid">
+
+            <!-- Dev 1 -->
+            <div class="dev-card">
+                <img src="developer1.jpeg" class="dev-img" alt="Sanuli Yapa">
+                <h4>Sanuli Yapa</h4>
+                <p class="dev-role">Co-Founder</p>
+                <p class="dev-desc">Specialist in IoT sensor networks and low-latency video streaming architecture.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dev 2 -->
+            <div class="dev-card">
+                <img src="developer2.jpeg" class="dev-img" alt="Heshani Aloka">
+                <h4>Heshani Aloka</h4>
+                <p class="dev-role">Co-Founder</p>
+                <p class="dev-desc">Developed the computer vision model that identifies elephants with 98% accuracy.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dev 3 -->
+            <div class="dev-card">
+                <img src="developer3.jpeg" class="dev-img" alt="Chanith">
+                <h4>Chanith Samarasinghe</h4>
+                <p class="dev-role">Co-Founder</p>
+                <p class="dev-desc">Ensuring technology serves both human safety and wildlife preservation ethics.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dev 4 -->
+            <div class="dev-card">
+                <img src="developer4.jpeg" class="dev-img" alt="Sahiru Thewnim">
+                <h4>Sahiru Thewnim</h4>
+                <p class="dev-role">Co-founder</p>
+                <p class="dev-desc">Focuses on end-to-end encryption for camera feeds and user data privacy compliance.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dev 5 -->
+            <div class="dev-card">
+                <img src="developer5.jpeg" class="dev-img" alt="Nashat Amith">
+                <h4>Nashat Amith</h4>
+                <p class="dev-role">co-founder</p>
+                <p class="dev-desc">Optimizing the app for low-bandwidth environments to ensure alerts reach remote villages.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dev 6 -->
+            <div class="dev-card">
+                <img src="developer6.jpeg" class="dev-img" alt="David Okonjo">
+                <h4>Achira Iduwara</h4>
+                <p class="dev-role">co-founder</p>
+                <p class="dev-desc">Analyzing migration patterns to improve predictive alert algorithms and safe corridor planning.</p>
+
+                <div class="dev-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <div class="flex items-center gap-2" style="margin-bottom: 1rem; color: white;">
+                            <i class="fa-solid fa-elephant"></i>
+                            <span style="font-weight: 700; font-size: 1.25rem;">E.R.A.S</span>
+                        </div>
+                        <p style="font-size: 0.875rem; max-width: 20rem;">Protecting communities and preserving wildlife through advanced monitoring technology.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: white; font-weight: 700; margin-bottom: 1rem;">Product</h5>
+                        <a href="#" class="footer-link">Download</a>
+                        <a href="#" class="footer-link">Live Map</a>
+                        <a href="#" class="footer-link">Reporting</a>
+                    </div>
+                    <div>
+                        <h5 style="color: white; font-weight: 700; margin-bottom: 1rem;">Legal</h5>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                <div style="text-align: center; font-size: 0.875rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+                    &copy; 2025 E.R.A.S Inc. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Profile Modal (CSS Transition) -->
+        <label for="profile-toggle" class="modal-backdrop"></label> <!-- Clicking this label closes the modal -->
+        
+        <div class="slide-panel">
+            <div class="flex justify-between items-center" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-main);">My Profile</h3>
+                <!-- Close Button Label -->
+                <label for="profile-toggle" style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--slate-100); color: var(--slate-500); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div style="width: 6rem; height: 6rem; margin: 0 auto 1rem auto; padding: 4px; border: 1px solid var(--brand-100); border-radius: 50%; position: relative;">
+                    <img src="profile.png" style="width: 100%; height: 100%; border-radius: 50%;">
+                    <div style="width: 1rem; height: 1rem; background: #22c55e; border: 2px solid white; border-radius: 50%; position: absolute; bottom: 0; right: 0;"></div>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);">Methuka Pathirana</h4>
+                <p style="font-size: 0.875rem; color: var(--text-muted);">Wildlife Officer</p>
+            </div>
+
+            <div class="flex gap-4" style="margin-bottom: 2rem;">
+                <div style="flex: 1; background: var(--slate-50); padding: 1rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-color);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: red;">12</div>
+                    <div style="font-size: 0.75rem; font-weight: 600; color: var(--slate-500); text-transform: uppercase;">Alerts Sent</div>
+                </div>
+                <div style="flex: 1; background: var(--slate-50); padding: 1rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-color);">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--brand-600);">45</div>
+                    <div style="font-size: 0.75rem; font-weight: 600; color: var(--slate-500); text-transform: uppercase;">Confirmations</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <button class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition" style="width: 100%; text-align: left; color: var(--text-main);">
+                    <div style="width: 2rem; height: 2rem; background: #ffedd5; color: #f97316; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-bell"></i></div>
+                    <span style="font-weight: 500;">‎ ‎ ‎ Notification Settings</span>
+                </button>
+                <button class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition" style="width: 100%; text-align: left; color: var(--text-main);">
+                    <div style="width: 2rem; height: 2rem; background: #dbeafe; color: #3b82f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-shield"></i></div>
+                    <span style="font-weight: 500;">‎ ‎ ‎ Privacy & Data</span>
+                </button>
+                <button class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition" style="width: 100%; text-align: left; color: var(--text-main);">
+                    <div style="width: 2rem; height: 2rem; background: var(--slate-100); color: var(--slate-500); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                    <span style="font-weight: 500;">‎ ‎ ‎ Log Out</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
